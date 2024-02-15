@@ -26,7 +26,7 @@ public class FormServlet extends HttpServlet {
         if (isValidFirstName && isValidLastName && isValidAge) {
             resp.getWriter().write("Success");
         } else {
-            resp.getWriter().write("Failure");
+           getServletContext().getRequestDispatcher("/pages/save-request.jsp").forward(req, resp);
         }
     }
     private boolean isValidNameAndLastName(String str) {
